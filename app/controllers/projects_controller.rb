@@ -1,0 +1,15 @@
+class ProjectsController < ApplicationController
+  before_action :authenticate
+  def index
+    @projects = Project.all
+  end
+
+  def show
+  end
+
+  def new
+  end
+
+  def edit
+  end
+end
