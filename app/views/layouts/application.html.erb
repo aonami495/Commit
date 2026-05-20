@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title><%= content_for(:title) || "Commit" %></title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= csrf_meta_tags %>
+
     <%= csp_meta_tag %>
 
     <%= yield :head %>
@@ -13,11 +18,22 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <header class="flex justify-between px-6 py-3 bg-taupe-100 border-b border-taupe-300 ">
+
+        <h1 class="text-2xl"><%= link_to "Commit", root_path %></h1>
+
+        <button class="hover:bg-taupe-200 active:bg-taupe-300 bg-taupe-200 px-4 py-2 rounded-md">Logout</button>
+
+    </header>
+    <main class="container mx-auto mt-28 px-5 flex ">
+        <%= yield %>
+    </main>
+</body>
+
 </html>
