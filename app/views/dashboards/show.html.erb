@@ -1,2 +1,22 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
+<div class="flex">
+    <h1 class="text-4xl mt-4  ">Dashboards</h1>
+</div>
+
+<% if !@topics.empty? %>
+<% @topics.each do |topic|%>
+<%= link_to topic, class: "block" do %>
+<div>
+    <%= topic.emoji %>
+    <%= topic.name %>
+    <%= topic.description %>
+</div>
+<% end %>
+<% end %>
+
+<% else %>
+
+<%= link_to "新しく作成する", new_topic_path %>
+
+<% end %>
+
+<%= link_to "新しく作成する", new_topic_path %>

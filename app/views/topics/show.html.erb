@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @topic %>
 
 <div>
-  <%= link_to "Edit this topic", edit_topic_path(@topic) %> |
-  <%= link_to "Back to topics", topics_path %>
+    <%= link_to "topicを編集する", edit_topic_path(@topic) %> |
+    <%= link_to "ダッシュボードに戻る", dashboard_path %>
 
-  <%= button_to "Destroy this topic", @topic, method: :delete %>
+    <%= button_to "削除する", @topic, method: :delete, data: { turbo_confirm: "本当に削除しますか？"},
+    class: "text-red-600" %>
 </div>

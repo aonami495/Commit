@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      topic:
+        name: "トピック名"
+        description: "内容"
+        emoji: "絵文字"
+    errors:
+      models:
+        topic:
+          attributes:
+            name:
+              blank: "を入力してください"
