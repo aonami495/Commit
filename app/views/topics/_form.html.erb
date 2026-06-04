@@ -11,22 +11,22 @@
 </div>
 <% end %>
 
-<div>
+<div class="p-4 grid gap-4">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-input"%>
 </div>
 
-<div>
+<div class="p-4 grid gap-4">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-input" %>
 </div>
 
-<div>
+<div class="p-4 grid gap-2">
     <%= form.label :emoji, style: "display: block" %>
-    <%= form.text_field :emoji %>
+    <%= form.text_field :emoji, class:"form-input"%>
 </div>
 
 <div>
-    <%= form.submit "保存する" %>
+    <%= form.submit "保存する", class:"btn-primary" %>
 </div>
 <% end %>

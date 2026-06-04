@@ -2,21 +2,21 @@
     <h1 class="text-4xl mt-4  ">Dashboards</h1>
 </div>
 
-<% if !@topics.empty? %>
-<% @topics.each do |topic|%>
-<%= link_to topic, class: "block" do %>
-<div>
-    <%= topic.emoji %>
-    <%= topic.name %>
-    <%= topic.description %>
+<div class="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <% if !@topics.empty? %>
+    <% @topics.each do |topic|%>
+    <%= link_to topic, class: "block h-full" do %>
+    <div class="bg-white rounded-lg shadow-md p-6 border h-full ">
+        <%= topic.emoji %>
+        <h3 class="font-bold text-lg"> <%= topic.name %> </h3>
+        <%= topic.description %>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
+
+
+    <%= link_to new_topic_path, class:"flex items-center justify-center p-6 border-2 border-dashed border-taupe-300 rounded-lg text-taupe-500 hover:border-taupe-400 hover:text-taupe-700 hover:bg-taupe-50" do %>
+    <span class="text-2xl">+ 新しく作成する</span>
+    <%end%>
 </div>
-<% end %>
-<% end %>
-
-<% else %>
-
-<%= link_to "新しく作成する", new_topic_path %>
-
-<% end %>
-
-<%= link_to "新しく作成する", new_topic_path %>

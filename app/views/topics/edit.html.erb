@@ -1,12 +1,15 @@
 <% content_for :title, "Editing topic" %>
 
-<h1>トピックを編集する</h1>
+<h1 class="text-taupe-200 pt-4">編集</h1>
 
-<%= render "form", topic: @topic %>
+<div class="border h-130 mt-12 p-4 rounded-lg border-taupe-300">
 
-<br>
+    <%= render "form", topic: @topic %>
 
-<div>
-    <%= link_to "詳しく見る", @topic %> |
-    <%= link_to "ダッシュボードに戻る", dashboard_path %>
+    <br>
+
+    <div>
+        <%= link_to "詳しく見る", @topic ,class:"btn-secondary"%> |
+        <%= link_to "ダッシュボードに戻る", dashboard_path,class:"btn-secondary" %>
+    </div>
 </div>
