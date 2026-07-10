@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :topics
-   devise_for :users
+  resources :topics do
+    resources :study_logs, only: [ :index, :create, :update, :destroy ]
+  end
+  devise_for :users
 
-   resource :dashboard, only: [ :show ]
+  resource :dashboard, only: [ :show ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

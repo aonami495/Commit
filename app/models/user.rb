@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :topics, dependent: :destroy
+  has_many :study_logs, dependent: :destroy
 
   validates :name, presence: true
 end
